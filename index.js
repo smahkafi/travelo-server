@@ -83,9 +83,9 @@ async function run() {
 
 //root
 app.get('/', (req, res)=>{
-  res.send('node server site run')
+  res.send('Running TravelO Server')
 })
 
 app.listen(port, ()=>{
-  console.log('port is running on server', port);
+  console.log('Running TravelO Server on port', port);
 })
