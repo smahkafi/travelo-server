@@ -67,6 +67,19 @@ async function run() {
     })
 
 
+    app.put('/bookings/:id', async (req, res) => {
+      const id = req.params.id;
+      const query = { _id: ObjectId(id) }
+      const confirmationOrder = {
+          $set: {
+              status: 'Confirm'
+          }
+      }
+      const result = await bookingCollections.updateOne(query, confirmationOrder)
+      res.json(result)
+    })
+
+
       // cancle order
       app.delete('/bookings/:id', async(req, res) => {
         const id = req.params.id;
