@@ -42,24 +42,12 @@ async function run() {
         res.send(result)
       })
 
-
       //booking data getting 
       app.get('/bookings', async(req, res) =>{
         const cursor = bookingCollections.find({})
         const booking = await cursor.toArray()
         res.send(booking)
       })
-
-
-
-      // //order get
-      // app.get('/orders', async(req, res) =>{
-      //   const cursor = ordersCollections.find({})
-      //   const orders = await cursor.toArray()
-      //   res.send(orders)
-      // })
-
-
 
       // cancle order
       app.delete('/bookings/:id', async(req, res) => {
